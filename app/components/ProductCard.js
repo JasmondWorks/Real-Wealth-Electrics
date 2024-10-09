@@ -4,10 +4,18 @@ import Link from "next/link";
 import ArrowLink from "./ButtonLink";
 import Image from "next/image";
 
-const ProductCard = ({ title, body, className, isCategory, product }) => {
+const ProductCard = ({
+  title,
+  body,
+  className,
+  isCategory,
+  product,
+  linkDestination,
+}) => {
+  console.log(product);
   return (
     <div
-      className={`flex flex-col group hover:border-primary border max-w-xl lg:max-w-none border-neutral-200 text-center ${className}`}
+      className={`flex flex-col group hover:border-primary border max-w-xl lg:max-w-2xl border-neutral-200 text-center ${className}`}
     >
       {title && (
         <h3
@@ -26,7 +34,7 @@ const ProductCard = ({ title, body, className, isCategory, product }) => {
               width={2000}
               height={2000}
               alt={`${product.category} category`}
-              className="object-contain w-full max-w-40 mx-auto"
+              className="object-contain w-full max-w-64 mx-auto"
             />
             <Badge text={product.id.toUpperCase()} />
           </>
@@ -35,6 +43,7 @@ const ProductCard = ({ title, body, className, isCategory, product }) => {
       <ArrowLink
         className="p-4 border-t border-neutral-200 flex justify-center opacity-85"
         text={title ? `All ${title}` : "Go to product"}
+        linkDestination={linkDestination}
       />
     </div>
   );

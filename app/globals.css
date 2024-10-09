@@ -18,6 +18,10 @@
   }
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -33,8 +37,8 @@ body {
 }
 
 [class*="container-custom"] {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 0 auto;
   max-width: 78rem;
 }

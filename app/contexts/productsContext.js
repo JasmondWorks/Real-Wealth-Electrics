@@ -21,7 +21,7 @@ const products = [
   {
     name: "Composite master time instrument",
     id: "cctm262.3",
-    category: "Counter-Timers",
+    category: "Digital Timer-Counters",
     specifications: [
       "200 series",
       "6 digits",
@@ -46,7 +46,7 @@ const products = [
   },
   {
     name: "",
-    id: "dsct144.png",
+    id: "dsct144",
     category: "Digital Satellite Clocks",
     specifications: [
       "100 series",
@@ -59,7 +59,7 @@ const products = [
   },
   {
     name: "",
-    id: "fcctm262.3.png",
+    id: "fcctm262.3",
     category: "Full Calendar Clocks",
     specifications: [
       "200 series",
@@ -71,15 +71,15 @@ const products = [
   },
   {
     name: "Single line full calendar satellite disciplined text clock",
-    id: "slc16.png",
+    id: "slc16",
     category: "Full Calendar Clocks",
     specifications: ["LED matrix display"],
     images: ["slc16.png"],
   },
   {
     name: "",
-    id: "m64h4.png",
-    category: "Multizone World Time Clocks",
+    id: "m64h4",
+    category: "World-Time Multizone Clocks",
     specifications: [
       "6 digits",
       "4 inches",
@@ -90,8 +90,8 @@ const products = [
   },
   {
     name: "",
-    id: "m64h412.png",
-    category: "Multizone World Time Clocks",
+    id: "m64h412",
+    category: "World-Time Multizone Clocks",
     specifications: [
       "100 series",
       "6 digits",
@@ -104,8 +104,8 @@ const products = [
   },
   {
     name: "",
-    id: "mf2.3v8.png",
-    category: "Multizone World Time Clocks",
+    id: "mf2.3v8",
+    category: "World-Time Multizone Clocks",
     specifications: [
       "100 series",
       "6 digits",

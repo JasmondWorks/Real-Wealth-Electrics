@@ -4,13 +4,24 @@ const SectionHeader = ({
   title = "",
   subtitle = "",
   isAlignedLeft = false,
-  className,
+  className = "",
+  headingSize = "normal",
+  isMarginBottomPresent = true,
 }) => {
   return (
     <div
-      className={`space-y-8 mb-20 ${!isAlignedLeft ? 'max-w-3xl mx-auto text-center' : ''} ${className}`}
+      className={`space-y-8 ${isMarginBottomPresent ? "mb-20" : ""} ${
+        !isAlignedLeft ? "max-w-3xl mx-auto text-center" : ""
+      } ${className}`}
     >
-      <h2 className="text-3xl font-bold">{title}</h2>
+      <h2
+        className={`${
+          headingSize === "normal" ? "text-3xl leading-snug" : ""
+        } ${headingSize === "small" ? "text-2xl" : ""}
+         font-bold`}
+      >
+        {title}
+      </h2>
       {subtitle && <p>{subtitle}</p>}
     </div>
   );

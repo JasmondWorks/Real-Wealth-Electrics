@@ -1,0 +1,5 @@
+.alternatedSection:nth-child(odd) {
+    background-color: #fffbdb;
+    /* background-color: #fafafa; */
+  }
+  

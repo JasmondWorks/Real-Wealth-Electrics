@@ -1,9 +1,15 @@
 import React from "react";
 
-const SectionLayout = ({ children, className }) => {
+const SectionLayout = ({ children, className, isContainerSmall = false }) => {
   return (
     <section className={`${className}`}>
-      <div className="container-custom">{children}</div>
+      <div
+        className={`${
+          isContainerSmall ? "container-custom--sm" : "container-custom"
+        }`}
+      >
+        {children}
+      </div>
     </section>
   );
 };
