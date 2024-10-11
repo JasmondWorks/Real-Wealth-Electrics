@@ -18,11 +18,9 @@ import { urlParser } from "../utils/functions";
 const ProductClientComponent = ({ product, category }) => {
   const { products } = useProducts();
   const productData = products.find((prod) => prod.id === product);
-  console.log(category);
 
   const similarProducts = products.filter(
-    (prod) =>
-      urlParser(prod.category) === category && prod.id !== product
+    (prod) => urlParser(prod.category) === category && prod.id !== product
   );
 
   if (!productData?.id) return <Loader />;
@@ -35,12 +33,11 @@ const ProductClientComponent = ({ product, category }) => {
         </Link>
         <FaChevronRight className="text-neutral-500" />
         <Link href={`/products/${category}`} className="text-neutral-500">
-          Digital Satellite Clocks
+          {productData.category}
         </Link>
         <FaChevronRight className="text-neutral-500" />
         <p className="font-bold">{product.toUpperCase()}</p>
       </PageHeader>
-      <div>{products.category}</div>
       <div>
         <SectionLayout>
           <SectionHeader

@@ -47,5 +47,15 @@ body {
 }
 
 section {
-  padding: 100px 0;
+  padding: 60px 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 100px 0;
+  }
+}
+
+img {
+  max-width: 100%;
 }

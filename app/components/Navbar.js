@@ -14,6 +14,7 @@ import Badge from "./Badge";
 import { useAppData } from "../contexts/appContext";
 import Dropdown from "./Dropdown";
 import ButtonLink from "./ButtonLink";
+import { urlParser } from "../utils/functions";
 
 const initialState = {
   selectedCategory: null,
@@ -116,7 +117,7 @@ const Navbar = () => {
                           <ProductCard
                             key={prod.id}
                             isCategory={false}
-                            linkDestination={`/products/${prod.category}/${prod.id}`}
+                            linkDestination={`/products/${urlParser(prod.category)}/${prod.id}`}
                             body={
                               <>
                                 <Image
@@ -179,7 +180,7 @@ const Navbar = () => {
                       <ButtonLink
                         className="border border-neutral-400 px-4 py-2 leading-4 w-fit"
                         isLink
-                        linkDestination={`/usecases/${selectedUseCase.title.split(' ').join('_')}`}
+                        linkDestination={`/usecases/${urlParser(selectedUseCase.title)}`}
                         text="Read more"
                       />
                     </div>

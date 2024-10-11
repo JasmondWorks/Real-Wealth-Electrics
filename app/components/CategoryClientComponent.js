@@ -14,6 +14,7 @@ import Badge from "@/app/components/Badge";
 import { useAppData } from "@/app/contexts/appContext";
 import _ from "lodash";
 import { urlParser } from "../utils/functions";
+import OtherLinksList from "./OtherLinksList";
 
 const CategoryClientComponent = ({ category }) => {
   const { categories } = useAppData();
@@ -21,10 +22,14 @@ const CategoryClientComponent = ({ category }) => {
     (cat) => urlParser(cat.title) === category
   );
   const { title, image, products: categoryProducts } = categoryData;
+  const otherCategories = categories.filter(
+    (cat) => urlParser(cat.title) !== category
+  );
 
   return (
     <div>
       <BlogDetails
+        smallPageImage
         pageRoute={category}
         data={categories}
         heading={`Features of the ${title}`}
@@ -53,6 +58,12 @@ const CategoryClientComponent = ({ category }) => {
             />
           ))}
         </ProductsList>
+      </SectionLayout>
+      <SectionLayout>
+        <SectionHeader title="Other categories" />
+        <div className="flex flex-wrap gap-5 justify-center">
+          <OtherLinksList basePath="products" linksArr={otherCategories} />
+        </div>
       </SectionLayout>
     </div>
   );

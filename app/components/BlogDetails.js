@@ -14,6 +14,7 @@ const BlogDetails = ({
   heading,
   pageHeader,
   pageImage = "",
+  smallPageImage = false,
 }) => {
   const {
     title: pageTitle,
@@ -40,7 +41,7 @@ const BlogDetails = ({
             <h2 className="font-bold text-3xl leading-snug">{heading}</h2>
             {pageImage && (
               <Image
-                // className="max-w-xl mx-auto"
+                className={smallPageImage && "lg:max-w-xl mx-auto"}
                 src={`/assets/images/${pageImage}`}
                 alt="page image"
                 width={2000}

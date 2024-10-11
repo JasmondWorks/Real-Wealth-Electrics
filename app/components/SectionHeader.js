@@ -10,7 +10,7 @@ const SectionHeader = ({
 }) => {
   return (
     <div
-      className={`space-y-8 ${isMarginBottomPresent ? "mb-20" : ""} ${
+      className={`space-y-8 ${isMarginBottomPresent ? "mb-14 lg:mb-20" : ""} ${
         !isAlignedLeft ? "max-w-3xl mx-auto text-center" : ""
       } ${className}`}
     >
