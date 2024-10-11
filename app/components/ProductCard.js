@@ -12,7 +12,6 @@ const ProductCard = ({
   product,
   linkDestination,
 }) => {
-  console.log(product);
   return (
     <div
       className={`flex flex-col group hover:border-primary border max-w-xl lg:max-w-2xl border-neutral-200 text-center ${className}`}
@@ -30,11 +29,11 @@ const ProductCard = ({
         {product?.id && (
           <>
             <Image
+              className="object-contain w-full max-w-64 mx-auto"
               src={`/assets/images/${product.images[0]}`}
               width={2000}
               height={2000}
               alt={`${product.category} category`}
-              className="object-contain w-full max-w-64 mx-auto"
             />
             <Badge text={product.id.toUpperCase()} />
           </>

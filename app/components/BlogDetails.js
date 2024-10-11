@@ -4,6 +4,8 @@ import PageHeader from "./PageHeader";
 import SectionLayout from "./SectionLayout";
 import SectionHeader from "./SectionHeader";
 import styles from "./BlogDetails.module.css";
+import _ from "lodash";
+import { urlParser } from "../utils/functions";
 
 const BlogDetails = ({
   pageRoute,
@@ -13,12 +15,11 @@ const BlogDetails = ({
   pageHeader,
   pageImage = "",
 }) => {
-  const contentId = pageRoute.split("__")[1];
   const {
     title: pageTitle,
     shortSummary,
     details: { introduction, content, conclusion },
-  } = data.find((d) => Number(d.id) === Number(contentId));
+  } = data.find((d) => urlParser(d.title) === pageRoute);
 
   return (
     <div>
@@ -52,22 +53,29 @@ const BlogDetails = ({
       </SectionLayout>
       {content.map((el) => (
         <div className={`${styles.alternatedSection} py-20`} key={el.heading}>
-          <div className="container-custom">
+          <div className="container-custom--sm">
             <h3 className="mb-10 font-bold text-xl">{el.heading}</h3>
-            <div className="grid lg:grid-cols-5 gap-16">
+            <div className="space-y-5 lg:col-span-3">
+              {el.paragraphs.map((text) => (
+                <p key={text}>{text}</p>
+              ))}
+            </div>
+            {/* <div className="grid lg:grid-cols-5 gap-16">
               <div className="space-y-5 lg:col-span-3">
                 {el.paragraphs.map((text) => (
                   <p key={text}>{text}</p>
                 ))}
               </div>
               <Image
-                className="order-1 lg:col-span-2 h-full object-cover w-full"
-                src="/assets/images/banking.jpg"
+                className={`order-1 lg:col-span-2 h-full object-cover w-full`}
+                src={
+                  `'/assets/images/'${el.image}` || "/assets/images/banking.jpg"
+                }
                 width={2000}
                 height={2000}
                 alt={`illustration for ${el.heading}`}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

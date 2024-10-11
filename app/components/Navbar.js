@@ -179,7 +179,7 @@ const Navbar = () => {
                       <ButtonLink
                         className="border border-neutral-400 px-4 py-2 leading-4 w-fit"
                         isLink
-                        linkDestination={`/usecases/${selectedUseCase.title}__${selectedUseCase.id}`}
+                        linkDestination={`/usecases/${selectedUseCase.title.split(' ').join('_')}`}
                         text="Read more"
                       />
                     </div>

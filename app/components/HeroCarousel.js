@@ -6,8 +6,11 @@ import ButtonLink from "./ButtonLink";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import Image from "next/image";
 import { useAppData } from "../contexts/appContext";
+import _ from "lodash";
+import { urlParser } from "../utils/functions";
 
 const HeroCarousel = () => {
+  console.log(urlParser("123 456#aaa-abcd"));
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const { categories } = useAppData();
   const selectedCategory = categories[selectedCategoryIndex];
@@ -22,7 +25,7 @@ const HeroCarousel = () => {
       prevIndex === 0 ? categories.length - 1 : prevIndex - 1
     );
   }
-  console.log(selectedCategoryIndex);
+
   return (
     <div className="text-center">
       <div className="flex py-8 gap-4 justify-center items-center">
@@ -36,7 +39,7 @@ const HeroCarousel = () => {
             width={2000}
             height={2000}
             alt={selectedCategory.title}
-            className="object-contain w-full max-w-80 mx-auto"
+            className="object-contain max-w-80 mx-auto h-36"
           />
           <p className="font-bold text-lg">{selectedCategory.title}</p>
         </div>
@@ -49,12 +52,12 @@ const HeroCarousel = () => {
         <ButtonLink
           size="base"
           text="Go to Product"
-          linkDestination={`/products/${selectedCategory.title}__${
-            selectedCategory.id
-          }/${selectedCategory.image.slice(0, -4)}`}
+          linkDestination={`/products/${urlParser(
+            selectedCategory.title
+          )}/${selectedCategory.image.slice(0, -4)}`}
         />
         <ButtonLink
-          linkDestination={`/products/${selectedCategory.title}__${selectedCategory.id}`}
+          linkDestination={`/products/${urlParser(selectedCategory.title)}`}
           className="text-neutral-500"
           size="base"
           text="Go to Category"

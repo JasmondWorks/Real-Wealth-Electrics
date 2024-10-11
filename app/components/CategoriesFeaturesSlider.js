@@ -9,28 +9,17 @@ import Badge from "./Badge";
 import { useAppData } from "../contexts/appContext";
 import Link from "next/link";
 import ButtonLink from "./ButtonLink";
-
-const categoryFeatures = [
-  {
-    category: "Digital Timer-Counters",
-  },
-  {
-    category: "Multizone World Time Clocks",
-  },
-  {
-    category: "Full Calendar Clocks",
-  },
-  {
-    category: "Digital Satellite Clocks",
-  },
-];
+import _ from "lodash";
+import { urlParser } from "../utils/functions";
 
 const CategoriesFeaturesSlider = () => {
-  const { productCategories, products } = useProducts();
+  const { products } = useProducts();
+
   const { categories: allCategories } = useAppData();
 
   const categories = allCategories.map((cat) => {
     const productsArray = [];
+
     products.forEach((product) => {
       if (product.category === cat.title) productsArray.push(product);
     });
@@ -38,10 +27,12 @@ const CategoriesFeaturesSlider = () => {
     return { ...cat, products: productsArray };
   });
 
-  const [selectedCategory, setSelectedCategory] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState(categories[0].title);
+  const category = categories.find((cat) => cat.title === selectedCategory);
 
   function handleSelectCategory(category) {
-    setSelectedCategory(categories.findIndex((cat) => cat.title === category));
+    // setSelectedCategory(categories.findIndex((cat) => cat.title === category));
+    setSelectedCategory(category);
   }
 
   return (
@@ -58,7 +49,7 @@ const CategoriesFeaturesSlider = () => {
       </div>
       <div className="mt-8">
         <h4 className="mb-16 p-4 border border-primary bg-primaryLight font-bold text-lg">
-          {categories[selectedCategory].title}
+          {category.title}
         </h4>
         <div className="grid gap-12 lg:grid-cols-6">
           <ProductCard
@@ -67,33 +58,31 @@ const CategoriesFeaturesSlider = () => {
             body={
               <>
                 <Image
-                  src={`/assets/images/${categories[selectedCategory].products[0].images[0]}`}
+                  src={`/assets/images/${category.products[0]?.images[0]}`}
                   width={2000}
                   height={2000}
                   alt="product category"
                   className="object-contain w-full max-w-40 mx-auto"
                 />
-                <Badge
-                  text={categories[
-                    selectedCategory
-                  ].products[0].id.toUpperCase()}
-                />
+                <Badge text={category.products[0]?.id.toUpperCase()} />
               </>
             }
-            linkDestination={`/products/${categories[selectedCategory].title}/${categories[selectedCategory].products[0].id}`}
+            linkDestination={`/products/${urlParser(category.title)}/${
+              category.products[0]?.id
+            }`}
           />
           <div className="lg:col-span-4 flex flex-col gap-7">
-            {categories[selectedCategory].features.map((feature) => (
+            {category.features.map((feature) => (
               <div className="space-y-3" key={feature.title}>
                 <p className="font-bold leading-4">{feature.title}</p>
                 <p>{feature.description}</p>
               </div>
             ))}
             <ButtonLink
-            className="mt-3 border border-neutral-300 px-4 py-2 leading-4 w-fit"
+              className="mt-3 border border-neutral-300 px-4 py-2 leading-4 w-fit"
               text="View more"
               isLink
-              linkDestination={`/products/${categories[selectedCategory].title}__${categories[selectedCategory].id}`}
+              linkDestination={`/products/${urlParser(category.title)}`}
             />
           </div>
         </div>

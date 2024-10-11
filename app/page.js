@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <section className="md:py-32">
         <div className="container-custom--sm">
-          <div className="text-center md:text-left max-w-xl md:max-w-none mx-auto grid md:grid-cols-2 gap-14 gap-y-20 items-center">
+          <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto grid lg:grid-cols-2 gap-14 gap-y-20 items-center">
             {/* Hero copy */}
             <div>
               <h1 className="mb-4 leading-tight text-5xl font-extrabold text-neutral-900">
@@ -35,7 +35,7 @@ export default function Home() {
                 Discover digital satellite clocks and versatile counters
                 designed for precision, reliability and global synchronization
               </p>
-              <div className="justify-center md:justify-start flex gap-6 items-center mt-12">
+              <div className="justify-center lg:justify-start flex gap-6 items-center mt-12">
                 <Button
                   variant="primary"
                   text="Our Products"
