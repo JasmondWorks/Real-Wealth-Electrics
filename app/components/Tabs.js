@@ -25,10 +25,8 @@ const Tabs = ({
     <div
       className={`border-b ${
         textColor === "dark" ? "border-neutral-200" : "border-neutral-700"
-      }   overflow-x-auto ${className} 
-      ${
-        !secondaryText ? "flex justify-center" : ""
-      }
+      }   overflow-x-auto w-full ${className} 
+      ${!secondaryText ? "flex" : ""}
        `}
     >
       <div
