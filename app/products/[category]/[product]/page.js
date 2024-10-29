@@ -1,17 +1,13 @@
 import ProductClientComponent from "@/app/components/ProductClientComponent";
-import { products } from "../../../data";
+import { products } from "@/app/data";
 import { urlParser } from "@/app/utils/functions";
 import _ from "lodash";
 
-export async function generateStaticParams() {
-  // Generate paths from the products array
-  if (!products || !Array.isArray(products)) {
-    console.error("Error: Products array is missing or undefined.");
-    return [];
-  }
+export function generateStaticParams() {
+  console.log(products.map((prod) => prod.category));
 
   const paths = products.map((product) => ({
-    category: urlParser(product?.category || ""), // Add a default if undefined
+    category: urlParser(product?.category || ""),
     product: product.id,
   }));
 

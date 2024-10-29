@@ -20,10 +20,13 @@ const ProductClientComponent = ({ product, category }) => {
   const productData = products.find((prod) => prod.id === product);
 
   const similarProducts = products.filter(
-    (prod) => urlParser(prod.category) === category && prod.id !== product
+    (prod) => urlParser(prod?.category) === category && prod.id !== product
   );
 
-  // if (!productData?.id) return <Loader />;
+  if (!productData?.id) return <Loader />;
+  // if (!product || !category) return <Loader />;
+
+  // return <div>product</div>;
 
   return (
     <div>
@@ -33,7 +36,7 @@ const ProductClientComponent = ({ product, category }) => {
         </Link>
         <FaChevronRight className="text-neutral-500" />
         <Link href={`/products/${category}`} className="text-neutral-500">
-          {productData.category}
+          {productData?.category}
         </Link>
         <FaChevronRight className="text-neutral-500" />
         <p className="font-bold">{product.toUpperCase()}</p>

@@ -6,10 +6,11 @@ const Loader = ({ className, isFullPage = true }) => {
   if (isFullPage)
     return (
       <div className="w-[80vw] mx-auto h-screen grid place-items-center">
-        <div class={`${styles.loader} ${className}`}></div>
+        <div className={`${styles.loader} ${className}`}></div>
       </div>
     );
-  return <div class={`${styles.loader} ${className}`}></div>;
+  return <div className
+  ={`${styles.loader} ${className}`}></div>;
 };
 
 export default Loader;
