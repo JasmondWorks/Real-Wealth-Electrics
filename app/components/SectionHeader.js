@@ -16,8 +16,8 @@ const SectionHeader = ({
     >
       <h2
         className={`${
-          headingSize === "normal" ? "text-3xl leading-snug" : ""
-        } ${headingSize === "small" ? "text-2xl" : ""}
+          headingSize === "normal" ? "text-2xl lg:text-3xl leading-snug" : ""
+        } ${headingSize === "small" ? "text-xl lg:text-2xl" : ""}
          font-bold`}
       >
         {title}

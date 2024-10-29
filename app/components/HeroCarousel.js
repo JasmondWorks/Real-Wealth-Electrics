@@ -49,19 +49,19 @@ const HeroCarousel = () => {
       </div>
 
       <div className="h-[1px] bg-neutral-200 w-full"></div>
-      <div className="justify-center items-center lg:gap-5 lg:flex w-fit mx-auto">
+      <div className="justify-center items-center sm:gap-5 flex-wrap gap-5 gap-y-3 flex w-fit mx-auto py-3">
         <ButtonLink
-          className="py-3 lg:py-5"
+          className=""
           size="base"
           text="Go to Product"
           linkDestination={`/products/${urlParser(
             selectedCategory.title
           )}/${selectedCategory.image.slice(0, -4)}`}
         />
-        <div className="h-[1px] lg:h-0 bg-neutral-200 w-full"></div>
+        {/* <div className="h-[1px] sm:h-0 bg-neutral-200 w-full"></div> */}
         <ButtonLink
           linkDestination={`/products/${urlParser(selectedCategory.title)}`}
-          className="text-neutral-500 py-3 lg:py-5"
+          className="text-neutral-500 "
           size="base"
           text="Go to Category"
         />

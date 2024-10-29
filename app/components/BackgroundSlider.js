@@ -33,7 +33,7 @@ const BackgroundSlider = () => {
         onSelectTab={handleSelectUseCase}
         isContained={true}
       />
-      <div className="container-custom flex items-center flex-1">
+      <div className="container-custom flex items-center flex-1 py-20">
         <div className="bg-black max-w-2xl bg-opacity-50 mx-auto w-fit px-10 py-8 text-white">
           <h3 className="text-xl text-yellow-400 font-bold mb-5">
             {useCases[selectedUseCase].title}

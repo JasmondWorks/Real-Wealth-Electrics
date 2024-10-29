@@ -28,17 +28,21 @@ body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   line-height: 1.7;
   font-weight: 500;
+  /* font-size: 1.35rem; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+  .headline {
+    @apply leading-tight text-4xl lg:text-5xl font-extrabold;
+  }
 }
 
 [class*="container-custom"] {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
   max-width: 78rem;
 }

@@ -1,19 +1,15 @@
-import localFont from "next/font/local";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ProductsProvider } from "./contexts/productsContext";
 import { AppDataProvider } from "./contexts/appContext";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const montserrat = Montserrat({
+  subsets: ["latin"], // Set the character subset (e.g., 'latin', 'latin-ext')
+  weight: ["400", "500", "700", "900"], // Choose font weights
+  style: ["normal", "italic"], // Choose font styles
+  display: "swap", // Use 'swap' to avoid invisible text
 });
 
 export const metadata = {
@@ -23,10 +19,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-neutral-700`}
-      >
+    <html lang="en" className={`${montserrat.className}`}>
+      <body className={`antialiased text-neutral-700`}>
         <AppDataProvider>
           <ProductsProvider>
             <Navbar />

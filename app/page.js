@@ -28,14 +28,14 @@ export default function Home() {
           <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto grid lg:grid-cols-2 gap:5 lg:gap-14 items-center">
             {/* Hero copy */}
             <div>
-              <h1 className="mb-4 leading-tight text-5xl font-extrabold text-neutral-900">
+              <h1 className="mb-4 headline text-neutral-900">
                 Stay on Time, Every Time
               </h1>
               <p className="text-lg leading-8 text-neutral-700">
                 Discover digital satellite clocks and versatile counters
                 designed for precision, reliability and global synchronization
               </p>
-              <div className="justify-center lg:justify-start flex flex-col lg:flex-row lg:gap-6 gap-3 items-center mt-12">
+              <div className="justify-center lg:justify-start flex-wrap flex lg:gap-6 gap-3 items-center mt-12">
                 <Button
                   variant="primary"
                   text="Our Products"

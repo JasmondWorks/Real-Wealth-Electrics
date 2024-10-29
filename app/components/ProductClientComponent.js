@@ -23,7 +23,7 @@ const ProductClientComponent = ({ product, category }) => {
     (prod) => urlParser(prod.category) === category && prod.id !== product
   );
 
-  if (!productData?.id) return <Loader />;
+  // if (!productData?.id) return <Loader />;
 
   return (
     <div>
