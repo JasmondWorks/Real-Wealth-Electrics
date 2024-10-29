@@ -1,5 +1,5 @@
 import ProductClientComponent from "@/app/components/ProductClientComponent";
-import { products } from "@/app/data";
+import { products } from "../../../data";
 import { urlParser } from "@/app/utils/functions";
 import _ from "lodash";
 
