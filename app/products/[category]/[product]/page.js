@@ -6,7 +6,7 @@ import _ from "lodash";
 export async function generateStaticParams() {
   // Generate paths from the products array
   const paths = products.map((product) => ({
-    category: urlParser(product.category),
+    category: urlParser(product?.category),
     product: product.id,
   }));
 
