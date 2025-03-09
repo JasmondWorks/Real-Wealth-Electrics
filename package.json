@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "NODE_ENV=production node server.js",
+    "dev": "node init && next dev",
+    "build": "node init && next build && next export",
+    "start": "node init && NODE_ENV=production node server.js",
     "lint": "next lint",
-    "start:dev": "npx serve@latest out"
+    "start:dev": "node init && npx serve@latest out"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.1",
