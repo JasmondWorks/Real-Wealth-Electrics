@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="text-[95%] md:text-[97%] lg:text-[100%]">
       <body className={`antialiased text-neutral-700 ${montserrat.className}`}>
         <AppDataProvider>
           <ProductsProvider>

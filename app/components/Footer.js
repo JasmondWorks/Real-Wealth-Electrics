@@ -4,17 +4,17 @@ import { FaChevronRight } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-100 text-sm">
+    <footer className="bg-secondary text-neutral-300 text-sm" id="footer">
       <div className="py-16 container-custom grid gap-20 lg:grid-cols-8">
-        <div className="border-b border-neutral-300 lg:border-b-0 pb-8 col-span-3">
+        <div className="border-b border-white border-opacity-5 lg:border-b-0 pb-8 col-span-3">
           <h2
-            className="font-bold mb-8 space-x-2 text-base lg:border-b lg:border-neutral-300 pb-2
+            className="font-bold mb-10 space-x-2 text-lg pb-2
 "
           >
-            <span className=" font-extrabold">RWE</span>
+            <span className="font-extrabold">RWE</span>
             <span>Real-Wealth Electrics</span>
           </h2>
-          <div className="space-y-4 leading-loose">
+          <div className="space-y-4">
             <p>
               RWE was established to engage in the business of the manufacture
               of electrical and electronic products for the world market.
@@ -26,58 +26,58 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="col-span-3 lg:border-b-0 border-b border-neutral-300 pb-8">
-          <h2 className="text-base font-bold mb-8 lg:border-b lg:border-neutral-300 pb-2 space-x-6">
+        <div className="col-span-3 lg:border-b-0 border-b border-white border-opacity-5 pb-8">
+          <h2 className="text-lg font-bold mb-10 pb-2 space-x-6">
             Quick Links
           </h2>
-          <div className="flex items-start gap-12 lg:gap-8 lg:justify-between">
+          <div className="flex items-start gap-16 sm:gap-24 lg:gap-10 lg:justify-between">
             <div>
-              <h3 className="font-bold mb-5">Categories</h3>
+              <h3 className="font-bold mb-5 text-sm">Categories</h3>
               <ul className="list-none space-y-3">
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Digital Satellite Clocks</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>World Time Clocks</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Full Calendar Clocks</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Digital Timer Counters</span>
                   </Link>
                 </li>
               </ul>
             </div>
             <div>
-              <h3 className="font-bold mb-5">Use Cases</h3>
+              <h3 className="font-bold mb-5 text-sm">Use Cases</h3>
               <ul className="list-none space-y-3">
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Education</span>
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Transportation</span>{" "}
                   </Link>
                 </li>
                 <li>
                   <Link href="#" className="flex gap-1 items-center">
-                    <FaChevronRight className="text-sm" />
+                    <FaChevronRight />
                     <span>Broadcast and media</span>
                   </Link>
                 </li>
@@ -86,9 +86,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-span-2">
-          <h2 className="text-base font-bold mb-8 lg:border-b lg:border-neutral-300 pb-2 space-x-6">
-            Contact
-          </h2>
+          <h2 className="text-lg font-bold mb-10 pb-2 space-x-6">Contact</h2>
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="font-bold">Address:</p>
@@ -105,7 +103,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-center py-6 border-t border-neutral-300">Copyright &copy; Real-Wealth Electrics 2024</p>
+      <p className="text-center py-4 border-t border-white border-opacity-5">
+        Copyright &copy; Real-Wealth Electrics 2024
+      </p>
     </footer>
   );
 };

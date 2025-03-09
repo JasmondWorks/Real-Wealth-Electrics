@@ -26,17 +26,18 @@ const TabButton = ({
   return (
     <button
       onClick={onSelectTab}
-      className={`py-2 ${
+      className={`py-2 text-sm whitespace-nowrap px-4 font-semibold relative ${
         isVerticalPaddingBig ? "pt-5 pb-4" : "pt-3 pb-2"
-      } whitespace-nowrap px-6 font-semibold ${
-        textColor === "dark" ? "text-neutral-500" : "text-neutral-300"
-      } ${
-        isSelected
-          ? "border-b-4 border-primary"
-          : "border-b-4 border-transparent"
-      }`}
+      } ${textColor === "dark" ? "text-neutral-500" : "text-neutral-300"} `}
     >
       {text}
+      <span
+        className={
+          isSelected
+            ? "absolute bottom-0 left-0 w-full h-0.5 bg-primary"
+            : "hidden"
+        }
+      ></span>
     </button>
   );
 };

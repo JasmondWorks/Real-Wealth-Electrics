@@ -1,4 +1,3 @@
-.alternatedSection:nth-child(odd) {
-  background-color: #fffbdb;
-  /* background-color: #fafafa; */
-}
+/* .alternatedSection:nth-child(odd) {
+  @apply bg-white
+} */

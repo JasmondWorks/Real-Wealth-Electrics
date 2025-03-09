@@ -1,7 +1,7 @@
-import { categories } from "@/app/data";
-import CategoryClientComponent from "@/app/components/CategoryClientComponent";
+import { categories } from "../../data";
+import CategoryClientComponent from "../../components/CategoryClientComponent";
 import _ from "lodash";
-import { urlParser } from "@/app/utils/functions";
+import { urlParser } from "../../utils/functions";
 
 export async function generateStaticParams() {
   return categories.map((category) => ({

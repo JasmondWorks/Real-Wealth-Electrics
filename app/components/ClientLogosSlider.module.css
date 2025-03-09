@@ -1,0 +1,17 @@
+.sliderContainer {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}

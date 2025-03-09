@@ -366,45 +366,45 @@ export const categories = [
 ];
 
 export const useCases = [
-  {
-    id: 1,
-    title: "Education and Training",
-    image: "education.jpg",
-    shortSummary:
-      "Accurate time synchronization ensures smooth coordination across educational facilities, improving learning outcomes and enhancing campus-wide operations.",
-    details: {
-      introduction:
-        "Time management plays an integral role in educational environments, where punctuality, precision, and coordination are key. Schools, universities, and training institutions can significantly enhance their operations by employing precise and synchronized time tools that ensure classes, labs, and administrative activities run on schedule.",
-      content: [
-        {
-          heading: "Ensuring Punctuality Across Campuses",
-          paragraphs: [
-            "Punctuality is the cornerstone of effective learning, ensuring that every minute of instruction counts. Institutions that rely on synchronized time across their campuses can minimize interruptions, improve classroom coordination, and reduce idle time between classes.",
-            "With precise time tools, administrators can manage daily schedules seamlessly, ensuring that students and teachers always know when and where they need to be. This leads to a smoother, less stressful educational environment, where time is optimized for learning rather than lost to inefficiencies.",
-            "For parents and students alike, punctuality signals professionalism. A school or university known for its precise scheduling creates a positive reputation, which in turn attracts more students and enhances the institution’s standing within the academic community. Accurate time management tools make it easier to deliver on this promise of reliability.",
-          ],
-        },
-        {
-          heading: "Enhancing Lab Experiment Accuracy",
-          paragraphs: [
-            "In the world of scientific education, experiments are a critical part of the learning process, and timing is everything. Whether it’s measuring a chemical reaction or monitoring the effects of controlled conditions, precision is key. By integrating timers and alerts into lab environments, educators can ensure that experiments are conducted accurately and with optimal timing.",
-            "These tools enable students to focus on learning rather than manually tracking time, improving engagement and providing a more interactive experience. The outcome? Students grasp concepts more effectively, leading to better academic performance and greater student satisfaction.",
-            "With automated time management, schools can support large-scale experiments with multiple groups, ensuring each experiment is properly timed without confusion. This allows educators to maximize lab usage and improve the learning experience for all students, ultimately contributing to a more effective and enriching academic experience.",
-          ],
-        },
-        {
-          heading: "Streamlined Management of Academic Calendars",
-          paragraphs: [
-            "Managing academic schedules, from class times to exam dates, can be a logistical challenge, especially in large institutions. Synchronized time and calendar displays help educators, students, and staff stay on track, reducing missed deadlines and ensuring that everyone is aware of important events.",
-            "With highly visible and accessible time and calendar tools, institutions can provide clear communication regarding exam periods, registration deadlines, and school events, which translates into less confusion and a more organized campus life.",
-            "In addition to improving internal operations, providing accurate time and calendar information helps students manage their academic lives more effectively. Clear, precise tools reduce anxiety about deadlines, leading to better student performance and overall academic success.",
-          ],
-        },
-      ],
-      conclusion:
-        "By implementing synchronized time solutions, educational institutions can improve punctuality, enhance lab performance, and better manage academic calendars, ultimately leading to a more efficient and organized learning environment.",
-    },
-  },
+  // {
+  //   id: 1,
+  //   title: "Education and Training",
+  //   image: "classroom.jpg",
+  //   shortSummary:
+  //     "Accurate time synchronization ensures smooth coordination across educational facilities, improving learning outcomes and enhancing campus-wide operations.",
+  //   details: {
+  //     introduction:
+  //       "Time management plays an integral role in educational environments, where punctuality, precision, and coordination are key. Schools, universities, and training institutions can significantly enhance their operations by employing precise and synchronized time tools that ensure classes, labs, and administrative activities run on schedule.",
+  //     content: [
+  //       {
+  //         heading: "Ensuring Punctuality Across Campuses",
+  //         paragraphs: [
+  //           "Punctuality is the cornerstone of effective learning, ensuring that every minute of instruction counts. Institutions that rely on synchronized time across their campuses can minimize interruptions, improve classroom coordination, and reduce idle time between classes.",
+  //           "With precise time tools, administrators can manage daily schedules seamlessly, ensuring that students and teachers always know when and where they need to be. This leads to a smoother, less stressful educational environment, where time is optimized for learning rather than lost to inefficiencies.",
+  //           "For parents and students alike, punctuality signals professionalism. A school or university known for its precise scheduling creates a positive reputation, which in turn attracts more students and enhances the institution’s standing within the academic community. Accurate time management tools make it easier to deliver on this promise of reliability.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Enhancing Lab Experiment Accuracy",
+  //         paragraphs: [
+  //           "In the world of scientific education, experiments are a critical part of the learning process, and timing is everything. Whether it’s measuring a chemical reaction or monitoring the effects of controlled conditions, precision is key. By integrating timers and alerts into lab environments, educators can ensure that experiments are conducted accurately and with optimal timing.",
+  //           "These tools enable students to focus on learning rather than manually tracking time, improving engagement and providing a more interactive experience. The outcome? Students grasp concepts more effectively, leading to better academic performance and greater student satisfaction.",
+  //           "With automated time management, schools can support large-scale experiments with multiple groups, ensuring each experiment is properly timed without confusion. This allows educators to maximize lab usage and improve the learning experience for all students, ultimately contributing to a more effective and enriching academic experience.",
+  //         ],
+  //       },
+  //       {
+  //         heading: "Streamlined Management of Academic Calendars",
+  //         paragraphs: [
+  //           "Managing academic schedules, from class times to exam dates, can be a logistical challenge, especially in large institutions. Synchronized time and calendar displays help educators, students, and staff stay on track, reducing missed deadlines and ensuring that everyone is aware of important events.",
+  //           "With highly visible and accessible time and calendar tools, institutions can provide clear communication regarding exam periods, registration deadlines, and school events, which translates into less confusion and a more organized campus life.",
+  //           "In addition to improving internal operations, providing accurate time and calendar information helps students manage their academic lives more effectively. Clear, precise tools reduce anxiety about deadlines, leading to better student performance and overall academic success.",
+  //         ],
+  //       },
+  //     ],
+  //     conclusion:
+  //       "By implementing synchronized time solutions, educational institutions can improve punctuality, enhance lab performance, and better manage academic calendars, ultimately leading to a more efficient and organized learning environment.",
+  //   },
+  // },
   {
     id: 2,
     title: "Media and Broadcast Production",
@@ -481,6 +481,115 @@ export const useCases = [
       ],
       conclusion:
         "In the finance, accounting, and e-commerce industries, precise timing tools ensure operational efficiency, regulatory compliance, and customer satisfaction. By implementing accurate time management solutions, businesses can improve their financial processes, enhance the customer experience, and minimize the risk of costly errors or missed deadlines.",
+    },
+  },
+  {
+    id: 4,
+    title: "Hospitals",
+    image: "hospital.jpg",
+    shortSummary:
+      "Coordinate surgeries and emergency responses with unmatched accuracy.",
+    details: {
+      introduction:
+        "Precision timing in hospitals can be a matter of life and death. From surgeries to emergency responses, accurate time management ensures smooth operations and better patient outcomes.",
+      content: [
+        {
+          heading: "Optimizing Surgical Schedules",
+          paragraphs: [
+            "Operating rooms require precise coordination to handle multiple surgeries daily. Synchronized time management allows hospitals to optimize room usage and reduce delays between procedures.",
+            "Time tools ensure that surgeons, anesthesiologists, and support staff are on the same schedule, minimizing the risk of miscommunication and enhancing patient safety.",
+          ],
+        },
+        {
+          heading: "Enhancing Emergency Response Efficiency",
+          paragraphs: [
+            "Emergency rooms must operate with split-second accuracy. Time synchronization ensures rapid decision-making and smooth handoffs between teams, reducing response times and saving lives.",
+          ],
+        },
+      ],
+      conclusion:
+        "Hospitals can greatly improve efficiency and patient care by employing precise time management tools.",
+    },
+  },
+  {
+    id: 5,
+    title: "Factories",
+    image: "factory.jpg",
+    shortSummary:
+      "Keep shifts on schedule with dependable timing under pressure.",
+    details: {
+      introduction:
+        "Factories rely on accurate time management to optimize production and maintain worker safety. Synchronized time solutions help ensure that every process runs smoothly.",
+      content: [
+        {
+          heading: "Improving Shift Transitions",
+          paragraphs: [
+            "Accurate timekeeping helps factories maintain strict shift schedules, ensuring smooth transitions and minimizing downtime.",
+          ],
+        },
+        {
+          heading: "Optimizing Production Schedules",
+          paragraphs: [
+            "Precise timing tools allow managers to monitor production lines and identify inefficiencies, boosting overall output.",
+          ],
+        },
+      ],
+      conclusion:
+        "Time management tools enable factories to improve productivity and worker coordination.",
+    },
+  },
+  {
+    id: 6,
+    title: "Airports",
+    image: "airport.jpg",
+    shortSummary:
+      "Manage flights and passenger schedules with multi-zone precision.",
+    details: {
+      introduction:
+        "Airports are hubs of global activity, where timing is critical for managing flights, passengers, and cargo.",
+      content: [
+        {
+          heading: "Coordinating Flight Schedules",
+          paragraphs: [
+            "Accurate time synchronization ensures that flights depart and arrive on schedule, improving passenger satisfaction.",
+          ],
+        },
+        {
+          heading: "Streamlining Security Checks",
+          paragraphs: [
+            "Time tools help airports manage queues and reduce delays, ensuring a smoother travel experience for passengers.",
+          ],
+        },
+      ],
+      conclusion:
+        "With precise time management, airports can optimize operations and enhance the traveler experience.",
+    },
+  },
+  {
+    id: 7,
+    title: "Schools",
+    image: "classroom.jpg",
+    shortSummary:
+      "Ensure academic schedules run smoothly with visible, accurate displays.",
+    details: {
+      introduction:
+        "Schools thrive on well-structured schedules. Time tools ensure that academic activities are efficiently coordinated.",
+      content: [
+        {
+          heading: "Supporting Lesson Punctuality",
+          paragraphs: [
+            "Synchronized clocks ensure that lessons start and end on time, reducing disruptions and improving the flow of the school day.",
+          ],
+        },
+        {
+          heading: "Improving Communication with Parents",
+          paragraphs: [
+            "Accurate time tools allow schools to better communicate schedules to parents, fostering trust and transparency.",
+          ],
+        },
+      ],
+      conclusion:
+        "Precise timekeeping tools help schools improve their operations and maintain punctuality.",
     },
   },
 ];

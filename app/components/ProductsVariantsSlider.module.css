@@ -1,0 +1,41 @@
+.sliderContainer {
+  position: relative;
+}
+
+.sliderContainer :global(.swiper-pagination-bullet-active) {
+  background-color: var(--clr-primary) !important;
+}
+.sliderContainer :global(.swiper-pagination-bullet) {
+  background-color: white !important;
+}
+.sliderContainer :global(.swiper-button-next),
+.sliderContainer :global(.swiper-button-prev) {
+  height: 100% !important;
+  color: white !important;
+  bottom: 0 !important;
+
+  transform: translateY(-46.5%);
+  -webkit-transform: translateY(-46.5%);
+  -moz-transform: translateY(-46.5%);
+  -ms-transform: translateY(-46.5%);
+  -o-transform: translateY(-46.5%);
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  &::after {
+    font-size: 20px !important;
+  }
+}
+.sliderContainer :global(.swiper-button-next) {
+  right: 0 !important;
+}
+.sliderContainer :global(.swiper-button-prev) {
+  left: 0 !important;
+}
+
+.sliderContainer :global(.swiper) {
+  overflow: visible !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+}

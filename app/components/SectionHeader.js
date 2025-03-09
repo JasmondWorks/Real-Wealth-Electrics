@@ -10,15 +10,15 @@ const SectionHeader = ({
 }) => {
   return (
     <div
-      className={`space-y-8 ${isMarginBottomPresent ? "mb-14 lg:mb-20" : ""} ${
-        !isAlignedLeft ? "max-w-3xl mx-auto text-center" : ""
-      } ${className}`}
+      className={`space-y-3 z-10 ${
+        isMarginBottomPresent ? "mb-14 md:mb-20" : ""
+      } ${!isAlignedLeft ? "max-w-3xl mx-auto text-center" : ""} ${className}`}
     >
       <h2
-        className={`${
-          headingSize === "normal" ? "text-2xl lg:text-3xl leading-snug" : ""
-        } ${headingSize === "small" ? "text-xl lg:text-2xl" : ""}
-         font-bold`}
+        className={`${headingSize === "normal" ? "leading-snug" : ""} ${
+          headingSize === "small" ? "" : ""
+        }
+         `}
       >
         {title}
       </h2>

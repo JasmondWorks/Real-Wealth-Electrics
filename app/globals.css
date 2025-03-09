@@ -5,9 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --clr-primary: #edcc27;
+  /* --clr-primary-dark: hsl(50, 85%, 54%); */
+  /* --clr-primary: hsl(50, 93%, 52%); */
+  --clr-primary: hsl(50, 93%, 52%);
+  --clr-primary-dark: hsl(50, 93%, 47%);
+  --clr-secondary: #1f2331;
   --clr-primary-100: #fffbdb;
 }
 
@@ -18,11 +20,12 @@
   }
 } */
 
-
 /* width */
 ::-webkit-scrollbar {
-  width: 8.5px;
-  height: 8.5px;
+  /* width: 8.5px;
+  height: 8.5px; */
+  width: 0px;
+  height: 0px;
 }
 
 /* Track */
@@ -40,20 +43,19 @@
   @apply bg-neutral-400;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   line-height: 1.7;
   font-weight: 500;
-  /* font-size: 1.35rem; */
+  font-size: 1.1rem;
+}
+
+p {
+  @apply leading-[1.85];
 }
 
 @layer utilities {
@@ -61,22 +63,23 @@ body {
     text-wrap: balance;
   }
   .headline {
-    @apply leading-snug text-4xl lg:text-5xl font-extrabold;
+    @apply !leading-snug text-3xl md:text-4xl lg:text-[2.65rem] font-medium;
   }
 }
 
 [class*="container-custom"] {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin: 0 auto;
-  max-width: 78rem;
+  @apply px-[1.5rem] max-w-[78rem] mx-auto;
 }
 .container-custom--sm {
   max-width: 65rem;
 }
 
 section {
-  padding: 60px 0;
+  padding: 80px 0;
+}
+
+section:nth-child(odd) {
+  @apply bg-neutral-50;
 }
 
 @media (min-width: 768px) {
@@ -87,4 +90,101 @@ section {
 
 img {
   max-width: 100%;
+}
+
+.bg-gradient-blue {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    170deg,
+    rgba(0, 0, 0, 1) 39%,
+    rgba(27, 38, 60, 0.8688725490196079) 60%,
+    rgba(27, 38, 60, 0.5215336134453781) 75%,
+    rgba(46, 58, 84, 0) 89%
+  );
+}
+
+.bg-gradient-blue--light {
+  background: linear-gradient(to top, #d4f2ff, #e3f0ff);
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 8, 11, 1) 30%,
+    rgba(7, 8, 11, 0.96) 40%,
+    rgba(7, 8, 11, 0.76) 60%,
+    rgba(7, 8, 11, 0.5) 75%,
+    rgba(7, 8, 11, 0.1) 90%,
+    rgba(7, 8, 11, 0) 100%
+  );
+}
+
+@media (min-width: 1024px) {
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(7, 8, 11, 1) 30%,
+      rgba(7, 8, 11, 0.96) 40%,
+      rgba(7, 8, 11, 0.76) 60%,
+      rgba(7, 8, 11, 0.5) 75%,
+      rgba(7, 8, 11, 0.1) 90%,
+      rgba(7, 8, 11, 0) 100%
+    );
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+.swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.testimonials-slider.swiper {
+  @apply !pb-16 relative;
+}
+
+.testimonials-slider .swiper-slide {
+  @apply flex h-auto;
+}
+
+.hero-bg {
+  @apply min-h-screen grid place-items-center bg-cover bg-center  !text-neutral-200 relative w-full;
+}
+
+/* *:focus-visible {
+  @apply outline-none focus-visible:ring-1 ring-yellow-500 ring-offset-2 rounded-md;
+} */
+
+option {
+  @apply hover:bg-primary hover:text-black focus:bg-primary focus:text-black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-bold !leading-normal;
+}
+h1 {
+  @apply text-[2rem] md:text-4xl lg:text-[2.5rem];
+}
+h2 {
+  @apply text-[1.65rem] md:text-3xl;
+}
+h3 {
+  @apply text-2xl;
+}
+h4 {
+  @apply text-xl;
+}
+[role="combobox"] {
+  @apply h-10 w-full;
+}
+
+[data-radix-collection-item] svg {
+  @apply h-6 w-6;
 }

@@ -1,55 +1,76 @@
 "use client";
 
-import React, { useState } from "react";
-import Tabs from "./Tabs";
-import ButtonLink from "./ButtonLink";
+import styles from "./BackgroundSlider.module.css";
+
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useAppData } from "../contexts/appContext";
-import { urlParser } from "../utils/functions";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const BackgroundSlider = () => {
   const { useCases } = useAppData();
-  const [selectedUseCase, setSelectedUseCase] = useState(0);
-
-  function handleSelectUseCase(useCase) {
-    const selectedUseCase = useCases.find((c) => c.title === useCase);
-    setSelectedUseCase(useCases.indexOf(selectedUseCase));
-  }
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(
-          /assets/images/${useCases[selectedUseCase].image}
-        )`,
-        backgroundPosition: "center center",
+    <Swiper
+      modules={[Navigation, Pagination, Autoplay]}
+      navigation
+      loop
+      autoplay={{
+        delay: 6000,
+        disableOnInteraction: false,
       }}
-      className={`aspect-square lg:aspect-video max-h-[600px] w-full bg-cover bg-[url('/assets/images/${useCases[selectedUseCase].image}')] bg-blend-overlay bg-black bg-opacity-65 flex flex-col`}
+      pagination={{ clickable: true }}
+      className={`w-full rounded-3xl overflow-hidden px-5 ${styles.sliderContainer} container-custom--sm`}
     >
-      <Tabs
-        buttonsTextArray={useCases.map((usecase) => usecase.title)}
-        textColor="light"
-        // secondaryText="All Use Cases"
-        isVerticalPaddingBig={true}
-        onSelectTab={handleSelectUseCase}
-        isContained={true}
-      />
-      <div className="container-custom flex items-center flex-1 py-20">
-        <div className="bg-black max-w-2xl bg-opacity-50 mx-auto w-fit px-10 py-8 text-white">
-          <h3 className="text-xl text-yellow-400 font-bold mb-5">
-            {useCases[selectedUseCase].title}
-          </h3>
-          <p>{useCases[selectedUseCase].shortSummary}</p>
-          <ButtonLink
-            className="text-yellow-400 mt-12"
-            text="View more"
-            isLink
-            linkDestination={`/usecases/${urlParser(
-              useCases[selectedUseCase].title
-            )}`}
-          />
-        </div>
-      </div>
-    </div>
+      {useCases.map((useCase, index) => (
+        <SwiperSlide key={index} style={{ height: "unset" }}>
+          <div className="aspect-square sm:aspect-video">
+            <div className="w-full h-full flex flex-col justify-end items-center">
+              <div
+                style={{
+                  backgroundImage: `url(/assets/images/industries/${useCase.image})`,
+                  backgroundPosition: "center center",
+                  backgroundSize: "cover", // Ensure the image covers the container
+                }}
+                className="absolute inset-0 w-full h-full"
+              />
+              <div
+                className="absolute inset-0 w-full h-full"
+                style={{
+                  background: `linear-gradient(to top, 
+                    rgba(0, 0, 0, 0.9) 35%, 
+                    rgba(0, 0, 0, 0.7) 50%, 
+                    rgba(0, 0, 0, 0.4) 70%, 
+                    rgba(0, 0, 0, 0.1) 90%, 
+                    rgba(0, 0, 0, 0) 100%)`,
+                }}
+              ></div>
+              <div className="relative w-full max-w-2xl mx-auto py-16 px-10">
+                <div className="text-white text-center">
+                  <h4 className="font-bold mb-5 leading-tight text-lg md:text-2xl">
+                    {useCase.title}
+                  </h4>
+                  <p className="opacity-85 md:block text-base md:text-base !leading-loose">
+                    {useCase.shortSummary}
+                  </p>
+                  {/* <ButtonLink
+                    className="text-yellow-400 mt-10"
+                    text="Explore Applications for Your Industry"
+                    isLink
+                    href={`/usecases/${urlParser(useCase.title)}`}
+                  /> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 

@@ -5,56 +5,39 @@ import { FaArrowRight } from "react-icons/fa6";
 const ButtonLink = ({
   text,
   className,
-  size = "small",
-  linkDestination = "",
+  variant = "small",
+  href = "",
   onClick,
-  isLink = true,
   icon = "",
 }) => {
-  if (isLink && size === "small")
+  const baseStyles =
+    "transition-all text-neutral-600 inline-flex items-center gap-2 hover:gap-4 whitespace-nowrap hover:text-black font-bold";
+
+  const variants = {
+    small: baseStyles + " text-base",
+    large: baseStyles + " text-lg",
+    cta: baseStyles + " !text-black text-xl",
+  };
+
+  if (href)
     return (
       <Link
         onClick={onClick}
-        href={linkDestination}
-        className={`whitespace-nowrap inline-flex items-center gap-2 transition-all hover:gap-4 ${className}`}
+        href={href}
+        className={`${variants[variant]} ${className}`}
       >
-        <span className="font-bold text-sm">{text}</span>
+        <span>{text}</span>
         {icon}
         {!icon && <FaArrowRight />}
       </Link>
     );
-  if (!isLink && size === "small")
-    return (
-      <button
-        onClick={onClick}
-        className={`whitespace-nowrap inline-flex items-center gap-2 transition-all hover:gap-4 ${className}`}
-      >
-        <span className="font-bold text-sm">{text}</span>
-        {icon}
-        {!icon && <FaArrowRight />}
-      </button>
-    );
-  if (!isLink && size !== "small")
-    return (
-      <button
-        onClick={onClick}
-        className={`whitespace-nowrap inline-flex items-center gap-2 transition-all hover:gap-4 ${className}`}
-      >
-        <span className="font-bold text-xl">{text}</span>
-        {icon}
-        {!icon && <FaArrowRight />}
-      </button>
-    );
 
   return (
-    <Link
-      onClick={onClick}
-      href={linkDestination}
-      className={`hover:gap-4 transition-all whitespace-nowrap flex items-center gap-3 ${className}`}
-    >
-      <span className="font-bold text-base">{text}</span>
-      <FaArrowRight className="text-xl" />
-    </Link>
+    <button onClick={onClick} className={`${variants[variant]} ${className}`}>
+      <span>{text}</span>
+      {icon}
+      {!icon && <FaArrowRight />}
+    </button>
   );
 };
 

@@ -10,3 +10,12 @@
     }
   }
 }
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./*"] // This maps `@/` to the root of your project
+//     }
+//   }
+// }

@@ -1,90 +1,136 @@
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa6";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import { FaBullseye, FaHammer } from "react-icons/fa6";
 import Button from "./components/Button";
-import Image from "next/image";
 import SectionHeader from "./components/SectionHeader";
 import FeatureCard from "./components/FeatureCard";
 import { MdSatelliteAlt } from "react-icons/md";
-import { IoIosSunny } from "react-icons/io";
-import { TiEye } from "react-icons/ti";
+
 import SectionLayout from "./components/SectionLayout";
-import ProductCard from "./components/ProductCard";
-import Badge from "./components/Badge";
-import IconButton from "./components/IconButton";
-import Tabs from "./components/Tabs";
-import ProductsList from "./components/ProductsList";
-import ProductCategoriesList from "./components/ProductCategoriesList";
-import ButtonLink from "./components/ButtonLink";
 import BackgroundSlider from "./components/BackgroundSlider";
-import CategoriesFeaturesSlider from "./components/CategoriesFeaturesSlider";
-import HeroCarousel from "./components/HeroCarousel";
+import ProductCatsCarousel from "./components/ProductCatsCarousel";
+import HeroSlider from "./components/HeroSlider";
+import ProblemSolution from "./components/ProblemSolution";
+import Testimonials from "./components/Testimonials";
+import FaqAccordion from "./components/FaqAccordion";
+import ContactForm from "./components/ContactForm";
+import SectionCta from "./components/SectionCta";
+import ClientLogosSlider from "./components/ClientLogosSlider";
+import ImagePlaceholder from "./components/ImagePlaceholder";
 
 export default function Home() {
   return (
-    <div>
-      <section className="md:py-32">
-        <div className="container-custom--sm">
-          <div className="text-center lg:text-left max-w-xl lg:max-w-none mx-auto grid lg:grid-cols-2 gap:5 lg:gap-14 items-center">
-            {/* Hero copy */}
-            <div>
-              <h1 className="mb-4 headline text-neutral-900">
-                Stay on Time, Every Time
-              </h1>
-              <p className="text-lg leading-8 text-neutral-700">
-                Discover digital satellite clocks and versatile counters
-                designed for precision, reliability and global synchronization
-              </p>
-              <div className="justify-center lg:justify-start flex-wrap flex lg:gap-6 gap-3 items-center mt-12">
-                <Button
-                  variant="primary"
-                  text="Our Products"
-                  linkDestination="#productsCategories"
-                />
-                <Button variant="secondary" text="Contact Us" />
-              </div>
-            </div>
-            {/* Hero illustration */}
-            <HeroCarousel />
-          </div>
-        </div>
-      </section>
-      <SectionLayout>
-        <SectionHeader title="Product Categories" />
-        <ProductCategoriesList />
-      </SectionLayout>
-      <section>
+    <>
+      <HeroSlider />
+      <ProblemSolution />
+      <section className="">
         <div className="container-custom">
           <SectionHeader title="Features" />
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-3 gap-10 gap-y-14">
+            <FeatureCard
+              icon={<FaBullseye />}
+              title="Military-Grade Time Sync"
+              body={
+                <>
+                  <p className="">Always precise to the second.</p>
+                  {/* <p>Prevents costly delays in critical tasks.</p> */}
+                </>
+              }
+            />
             <FeatureCard
               icon={<MdSatelliteAlt />}
-              title="Auto or self-setting"
-              body="These clocks are set unattended and run on the signal of GPS satellites in space"
+              title="Automatic Time Adjustment"
+              body={
+                <>
+                  <p className="">Self-updates via satellite GPS.</p>
+                  {/* <p className="">No manual setup, always accurate. </p> */}
+                </>
+              }
             />
             <FeatureCard
-              icon={<IoIosSunny />}
-              title="Daylight Savings Time"
-              body="Time automatically adjusts in regions that experience daylight savings"
-            />
-            <FeatureCard
-              icon={<TiEye />}
-              title="Self-lit"
-              body="Being LED clocks, they are readable day and night without extra lighting"
+              icon={<FaHammer />}
+              title="Durable, Resilient Build"
+              body={
+                <>
+                  <p className="">
+                    Built to endure tough industrial conditions.
+                  </p>
+                  {/* <p>Reduces the need for repairs or replacements.</p> */}
+                </>
+              }
             />
           </div>
         </div>
-        <CategoriesFeaturesSlider />
+        {/* <CategoriesFeaturesSlider /> */}
       </section>
-      <section>
+      <section className="">
         <div className="container-custom">
           <SectionHeader
-            title="Product Use Cases"
-            subtitle="Out timing solutions are very versatile, thus can be tailored for many use cases across various industries"
+            title="Explore applications for your industry"
+            subtitle="Our timing solutions are very versatile, thus can be tailored for many applications across various industries"
+            className=""
           />
         </div>
-        <BackgroundSlider />
+        <div className="container-custom !px-3">
+          <BackgroundSlider />
+        </div>
       </section>
-    </div>
+
+      <section>
+        <div className="space-y-10 container-custom--sm">
+          <SectionHeader
+            title="Your new favourite task manager"
+            subtitle="Give your teams tools they can trust. Accurate timing means better results — every second makes a difference."
+          />
+          {/* <ImagePlaceholder /> */}
+        </div>
+        <div className="!px-3 container-custom--sm">
+          <ProductCatsCarousel />
+        </div>
+      </section>
+
+      <SectionLayout className="">
+        <SectionHeader title="What our customers say" />
+        <Testimonials />
+      </SectionLayout>
+
+      <SectionLayout isContainerSmall>
+        <SectionHeader title="FAQs" />
+        <FaqAccordion />
+      </SectionLayout>
+      <SectionCta />
+      <section>
+        <div className="container-custom--sm">
+          <SectionHeader
+            title="Don’t Leave Accuracy to Chance."
+            subtitle="Join leading industries and government facilities in Nigeria using GPS-synced clocks for precise, efficient operations."
+          />
+        </div>
+        {/* <ClientLogosSlider /> */}
+        <div className="flex gap-20 justify-between px-10 overflow-x-auto text-sm">
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-neutral-500">
+            Logo
+          </div>
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-">
+            Logo
+          </div>
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-">
+            Logo
+          </div>
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-">
+            Logo
+          </div>
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-">
+            Logo
+          </div>
+          <div className="h-16 lg:h-20 aspect-square bg-neutral-200 rounded-full grid place-items-center text-">
+            Logo
+          </div>
+        </div>
+        <div className="container-custom--sm">
+          <div className="flex justify-center mt-20">
+            <Button variant="primary" text="Get Started Today" />
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

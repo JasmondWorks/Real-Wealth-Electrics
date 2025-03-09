@@ -34,7 +34,7 @@ const Tabs = ({
           isContained ? "container-custom" : ""
         }`}
       >
-        <div className="flex flex-1">
+        <div className="flex">
           {buttonsTextArray.map((text) => (
             <TabButton
               onSelectTab={() => handleSelectTab(text)}
@@ -47,10 +47,10 @@ const Tabs = ({
           ))}
         </div>
         {secondaryText && (
-          <div className="flex items-center px-4">
+          <div className={`flex items-center px-4 border-l ${textColor === 'dark' ? 'border-neutral-200' : 'border-neutral-600'}  m-2`}>
             <ButtonLink
-              size="base"
-              className={`text-base ${
+              size="small"
+              className={` ${
                 textColor === "dark" ? "text-black" : "text-yellow-400"
               } `}
               text={secondaryText}

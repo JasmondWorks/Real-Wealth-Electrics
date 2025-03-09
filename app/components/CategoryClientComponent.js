@@ -1,17 +1,14 @@
 "use client";
 
 import React from "react";
-import PageHeader from "@/app/components/PageHeader";
-import Link from "next/link";
-import { FaChevronRight } from "react-icons/fa6";
-import BlogDetails from "@/app/components/BlogDetails";
-import SectionLayout from "@/app/components/SectionLayout";
-import SectionHeader from "@/app/components/SectionHeader";
-import ProductsList from "@/app/components/ProductsList";
-import ProductCard from "@/app/components/ProductCard";
+import BlogDetails from "../components/BlogDetails";
+import SectionLayout from "../components/SectionLayout";
+import SectionHeader from "../components/SectionHeader";
+import ProductsList from "../components/ProductsList";
+import ProductCard from "../components/ProductCard";
 import Image from "next/image";
-import Badge from "@/app/components/Badge";
-import { useAppData } from "@/app/contexts/appContext";
+import Badge from "../components/Badge";
+import { useAppData } from "../contexts/appContext";
 import _ from "lodash";
 import { urlParser } from "../utils/functions";
 import OtherLinksList from "./OtherLinksList";
@@ -27,7 +24,7 @@ const CategoryClientComponent = ({ category }) => {
   );
 
   return (
-    <div>
+    <div className="pt-2">
       <BlogDetails
         smallPageImage
         pageRoute={category}
@@ -37,12 +34,12 @@ const CategoryClientComponent = ({ category }) => {
         pageImage={image}
       />
       <SectionLayout>
-        <SectionHeader title="Products" />
-        <ProductsList className="grid grid-cols-4 gap-5">
+        <SectionHeader title="Product(s)" />
+        <ProductsList items={categoryProducts}>
           {categoryProducts.map((prod) => (
             <ProductCard
               key={prod.id}
-              linkDestination={`/products/${category}/${prod.id}`}
+              href={`/products/${category}/${prod.id}`}
               body={
                 <>
                   <Image
@@ -50,7 +47,7 @@ const CategoryClientComponent = ({ category }) => {
                     width={2000}
                     height={2000}
                     alt="product category"
-                    className="object-contain w-full max-w-40 mx-auto"
+                    className="object-contain w-full mx-auto max-w-sm"
                   />
                   <Badge text={prod.id.toUpperCase()} />
                 </>
@@ -60,7 +57,7 @@ const CategoryClientComponent = ({ category }) => {
         </ProductsList>
       </SectionLayout>
       <SectionLayout>
-        <SectionHeader title="Other categories" />
+        <SectionHeader title="Other product categories" />
         <div className="flex flex-wrap gap-5 justify-center">
           <OtherLinksList basePath="products" linksArr={otherCategories} />
         </div>

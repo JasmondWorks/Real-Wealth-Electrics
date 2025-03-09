@@ -1,14 +1,12 @@
-import ProductClientComponent from "@/app/components/ProductClientComponent";
-import { products } from "@/app/data";
-import { urlParser } from "@/app/utils/functions";
+import ProductClientComponent from "../../../components/ProductClientComponent";
+import { products } from "../../../data";
+import { urlParser } from "../../../utils/functions";
 import _ from "lodash";
 
 export function generateStaticParams() {
-  console.log(products.map((prod) => prod.category));
-
   const paths = products.map((product) => ({
     category: urlParser(product?.category || ""),
-    product: product.id,
+    product: product.id.toString(), // Ensure `product` is a string
   }));
 
   return paths;

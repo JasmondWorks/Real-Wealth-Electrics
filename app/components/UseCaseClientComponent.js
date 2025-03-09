@@ -1,11 +1,9 @@
 "use client";
 
-import BlogDetails from "@/app/components/BlogDetails";
+import BlogDetails from "../components/BlogDetails";
 import { useAppData } from "../contexts/appContext";
 import SectionHeader from "./SectionHeader";
 import SectionLayout from "./SectionLayout";
-import Link from "next/link";
-import ButtonLink from "./ButtonLink";
 import { urlParser } from "../utils/functions";
 import OtherLinksList from "./OtherLinksList";
 

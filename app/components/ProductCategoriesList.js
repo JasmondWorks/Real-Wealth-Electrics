@@ -25,13 +25,13 @@ const ProductCategoriesList = () => {
 
   return (
     <div id="productsCategories">
-      <ProductsList>
+      <ProductsList items={categories}>
         {categories.map((cat) => (
           <ProductCard
             title={cat.title}
             key={cat.id}
             product={cat.products[0]}
-            linkDestination={`/products/${urlParser(cat.title)}`}
+            href={`/products/${urlParser(cat.title)}`}
           />
         ))}
       </ProductsList>

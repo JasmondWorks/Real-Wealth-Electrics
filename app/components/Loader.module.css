@@ -1,24 +1,32 @@
+/* Loader.module.css */
 .loader {
-  border: 7px solid #f3f3f3;
-  /*Lightgrey*/
-  border-top: 7px solid var(--clr-primary);
-  /*Blue*/
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0);
+  border-top-color: var(--clr-primary);
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
   animation: spin 1s linear infinite;
-  -webkit-animation: spin 1s linear infinite;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
+/* Full-page overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark background */
+  backdrop-filter: blur(8px); /* Adds slight blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999999999;
+}
+
+/* Spinner Animation */
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
   }
 }

@@ -4,35 +4,39 @@ import React from "react";
 import { IoReturnUpBack } from "react-icons/io5";
 import ButtonLink from "./ButtonLink";
 import { FaArrowLeft } from "react-icons/fa6";
+import Image from "next/image";
+import Button from "@/app/components/Button";
 
 const PageHeader = ({ title = "", subtitle = "", children }) => {
   const router = useRouter();
 
   return (
-    <div className="p-10">
-      <section
-        style={{
-          backgroundImage: 'url("/assets/images/pcb-trace.png")',
-          backgroundSize: "contain",
-          backgroundBlendMode: "overlay",
-        }}
-        className="border border-primary bg-primaryLight text-center py-20"
-      >
-        <div className="container-custom--sm space-y-6">
-          <div className="space-y-2">
-            <h1 className="text-4xl leading-snug lg:text-5xl font-extrabold">{title}</h1>
-            <p className="font-bold text-lg">{subtitle}</p>
-          </div>
-          <div className="flex gap-x-3 gap-y-2 justify-center items-center flex-wrap px-4">
+    <div className="px-10 py-16 pt-20">
+      <section className="border bg-primaryLight text-center py-10 relative">
+        <Image
+          fill
+          src="/assets/images/pcb-trace.png"
+          alt="pcb trace"
+          className="object-cover bg-blend-overlay opacity-[.02] pointer-events-none"
+        />
+        <div className="container-custom--sm">
+          <div className="space-y-1">
+            <h1 className="text-3xl leading-snug lg:text-4xl font-extrabold">
+              {title}
+            </h1>
+            {/* <p className="font-bold opacity-80">{subtitle}</p> */}
             {children}
           </div>
-          <ButtonLink
-            icon={<FaArrowLeft />}
-            isLink={false}
-            onClick={() => router.back()}
-            text="Go back"
-            className="px-3 py-2 leading-4 border border-neutral-500 font-semibold flex-row-reverse"
-          />
+          {/* <div className="mt-10 space-y-3">
+            <div className="flex justify-center">
+              <Button
+                icon={<FaArrowLeft />}
+                onClick={() => router.back()}
+                text="Go back"
+                className=""
+              />
+            </div>
+          </div> */}
         </div>
       </section>
     </div>

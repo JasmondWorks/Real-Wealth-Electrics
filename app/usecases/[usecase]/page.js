@@ -1,6 +1,6 @@
-import UseCaseClientComponent from "@/app/components/UseCaseClientComponent";
-import { useCases } from "@/app/data";
-import { urlParser } from "@/app/utils/functions";
+import UseCaseClientComponent from "../../components/UseCaseClientComponent";
+import { useCases } from "../../data";
+import { urlParser } from "../../utils/functions";
 
 export async function generateStaticParams() {
   return useCases.map((usecase) => ({

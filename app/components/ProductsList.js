@@ -1,14 +1,11 @@
 import React from "react";
 
-const ProductsList = ({ children, className }) => {
+const ProductsList = ({ children, className, items = [] }) => {
   return (
     <div
-    className={`${className}`}
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        gap: "1rem",
-      }}
+      className={`gap-16 grid grid-cols-1 ${
+        items.length > 1 ? "md:grid-cols-2" : ""
+      } ${className}`}
     >
       {children}
     </div>

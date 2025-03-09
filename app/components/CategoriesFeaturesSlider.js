@@ -36,19 +36,19 @@ const CategoriesFeaturesSlider = () => {
   }
 
   return (
-    <div className="container-custom--sm">
-      <h3 className="mt-36 mb-14 text-center font-bold text-2xl">
+    <div className="bg-white !mt-16">
+      <h3 className="mb-2 text-center font-bold text-2xl">
         According to category
       </h3>
       <div>
         <Tabs
           buttonsTextArray={categories.map((cat) => cat.title)}
-          // secondaryText="All Categories"
+          secondaryText="All Categories"
           onSelectTab={handleSelectCategory}
         />
       </div>
-      <div className="mt-8">
-        <h4 className="mb-16 p-4 border border-primary bg-primaryLight font-bold text-lg">
+      <div className="container-custom--sm p-5">
+        <h4 className="mb-16 mt-5 pb-2 font-semibold text-[1.1rem] text-center border-b border-neutral-200">
           {category.title}
         </h4>
         <div className="grid gap-12 lg:grid-cols-6">
@@ -67,7 +67,7 @@ const CategoriesFeaturesSlider = () => {
                 <Badge text={category.products[0]?.id.toUpperCase()} />
               </>
             }
-            linkDestination={`/products/${urlParser(category.title)}/${
+            href={`/products/${urlParser(category.title)}/${
               category.products[0]?.id
             }`}
           />
@@ -79,10 +79,10 @@ const CategoriesFeaturesSlider = () => {
               </div>
             ))}
             <ButtonLink
-              className="mt-3 border border-neutral-300 px-4 py-2 leading-4 w-fit"
+              className="mt-3 leading-4 w-fit"
               text="View more"
               isLink
-              linkDestination={`/products/${urlParser(category.title)}`}
+              href={`/products/${urlParser(category.title)}`}
             />
           </div>
         </div>
