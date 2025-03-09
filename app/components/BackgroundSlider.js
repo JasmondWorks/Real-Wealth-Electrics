@@ -47,7 +47,7 @@ const BackgroundSlider = () => {
                     rgba(0, 0, 0, 0.7) 50%, 
                     rgba(0, 0, 0, 0.4) 70%, 
                     rgba(0, 0, 0, 0.1) 90%, 
-                    rgba(0, 0, 0, 0) 100%)`,
+                    rgba(0, 0, 0, 0.05) 100%)`,
                 }}
               ></div>
               <div className="relative w-full max-w-2xl mx-auto py-16 px-10">
