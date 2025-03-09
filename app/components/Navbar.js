@@ -58,7 +58,6 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsNavOpen(false);
-    console.log(pathname);
   }, [pathname]);
 
   // console.log(pathname.split("/")[1]);
@@ -116,6 +115,7 @@ const Navbar = () => {
             </li>
             <li className="border-t lg:border-t-0 border-neutral-200 group">
               <Dropdown
+                baseUrl="/products"
                 itemsText={categories.map((cat) => cat.title)}
                 text="Products"
                 className="lg:px-5"
