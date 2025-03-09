@@ -10,12 +10,10 @@ import OtherLinksList from "./OtherLinksList";
 const UseCaseClientComponent = ({ usecase }) => {
   const { useCases } = useAppData();
 
-  console.log(usecase);
-
   const useCaseData = useCases.find((u) => urlParser(u.title) === usecase);
   const { title, image } = useCaseData;
   const otherUseCases = useCases.filter((u) => u.title !== useCaseData.title);
-  console.log(otherUseCases);
+  console.log(image);
 
   return (
     <>
@@ -24,7 +22,7 @@ const UseCaseClientComponent = ({ usecase }) => {
         data={useCases}
         heading={`Benefits of our products in the ${title} industry`}
         pageSubtitle="Use Case"
-        pageImage={image}
+        pageImage={`industries/${image}`}
       />
       <SectionLayout>
         <SectionHeader title="Other use cases" />

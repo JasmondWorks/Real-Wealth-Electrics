@@ -65,7 +65,7 @@ const ProductClientComponent = ({ product, category }) => {
                     src={`/assets/images/${productData?.images[0]}`}
                     width={200}
                     height={200}
-                    className="object-contain"
+                    className="object-contain h-full"
                     alt="product"
                   />
                 </div>
@@ -74,7 +74,7 @@ const ProductClientComponent = ({ product, category }) => {
                     src={`/assets/images/${productData?.images[0]}`}
                     width={200}
                     height={200}
-                    className="object-contain"
+                    className="object-contain h-full"
                     alt="product"
                   />
                 </div>
@@ -83,7 +83,7 @@ const ProductClientComponent = ({ product, category }) => {
                     src={`/assets/images/${productData?.images[0]}`}
                     width={200}
                     height={200}
-                    className="object-contain"
+                    className="object-contain h-full"
                     alt="product"
                   />
                 </div>

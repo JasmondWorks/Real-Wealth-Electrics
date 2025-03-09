@@ -53,7 +53,7 @@ const BlogDetails = ({
         </div>
       </SectionLayout>
       <SectionLayout className="!bg-white">
-        <SectionHeader title={`Benefits of ${pageTitle}`} />
+        <SectionHeader title="Benefits" />
         <div className="flex flex-col space-y-8 lg:space-y-12">
           {content.map((el) => (
             <div

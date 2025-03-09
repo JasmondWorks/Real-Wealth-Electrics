@@ -69,7 +69,7 @@ export default function Home() {
             className=""
           />
         </div>
-        <div className="container-custom !px-3">
+        <div className="container-custom !px-3" id="industries">
           <BackgroundSlider />
         </div>
       </section>

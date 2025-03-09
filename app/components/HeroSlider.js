@@ -4,6 +4,7 @@ import React from "react";
 export default function HeroSlider() {
   return (
     <section
+      id="home"
       style={{
         minHeight: "100vh",
         // backgroundImage: "url(/assets/images/pcb-ai-generated.webp)",

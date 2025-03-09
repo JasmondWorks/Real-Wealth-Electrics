@@ -7,6 +7,8 @@ import Dropdown from "./Dropdown";
 import BigMenu from "./BigMenu";
 import { useProducts } from "../contexts/productsContext";
 import { usePathname } from "next/navigation";
+import { useAppData } from "@/app/contexts/appContext";
+import { urlParser } from "@/app/utils/functions";
 
 const initialState = {
   selectedCategory: null,
@@ -35,8 +37,22 @@ const Navbar = () => {
   const [{ selectedCategory }, dispatch] = useReducer(reducer, initialState);
   const darkPageHeroes = ["/"];
 
+  const { products } = useProducts();
+  const { categories: allCategories } = useAppData();
+
+  const categories = allCategories.map((cat) => {
+    const productsArray = [];
+
+    products.forEach((product) => {
+      if (product.category === cat.title) productsArray.push(product);
+    });
+
+    return { ...cat, products: productsArray };
+  });
+
+  console.log(categories);
+
   const pathname = usePathname();
-  console.log(pathname);
 
   // close nav when navigating to a new page
 
@@ -94,13 +110,13 @@ const Navbar = () => {
         <nav className={`overflow-auto lg:flex ${!isNavOpen ? "hidden" : ""}`}>
           <ul className="list-none lg:flex items-center gap-y-2 mt-6 lg:mt-0">
             <li>
-              <Link href="/" className="block font-bold py-4 lg:py-5 lg:px-5">
+              <Link href="/" className="block py-4 lg:py-5 lg:px-5">
                 <span className="inline-block">Home</span>
               </Link>
             </li>
             <li className="border-t lg:border-t-0 border-neutral-200 group">
               <Dropdown
-                itemsText={categoriesList.map((cat) => cat[0])}
+                itemsText={categories.map((cat) => cat.title)}
                 text="Products"
                 className="lg:px-5"
               />
@@ -108,18 +124,18 @@ const Navbar = () => {
                 <h3 className="font-bold text-lg mb-6">Categories</h3>
                 <div className="flex gap-10">
                   <ul className="list-none space-y-3">
-                    {categoriesList.map((cat) => (
+                    {categories.map((cat) => (
                       <Link
-                        onMouseOver={() =>
-                          dispatch({ type: "category/select", payload: cat[0] })
-                        }
-                        key={cat[0]}
-                        href="#"
+                        // onMouseOver={() =>
+                        //   dispatch({ type: "category/select", payload: cat[0] })
+                        // }
+                        key={cat.id}
+                        href={`/products/${urlParser(cat.title)}`}
                         className={`flex gap-1 items-center ${
                           selectedCategory === cat[0] ? "text-yellow-500" : ""
                         }`}
                       >
-                        {cat[0]}
+                        {cat.title}
                       </Link>
                     ))}
                   </ul>
